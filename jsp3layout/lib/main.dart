@@ -1,49 +1,182 @@
 import 'package:flutter/material.dart';
 
-void main(){
-  runApp(MaterialApp(
-    title:'导航演示01',
-    home:new FirstScreen()
-  ));
-}
+// void main() {
+//   runApp(MaterialApp(
+//     title:'页面跳转返回数据',
+//     home:FirstPage()
+//   ));
+// }
 
-class FirstScreen extends StatelessWidget{
-  @override
-  Widget build(BuildContext context){
-    return Scaffold(
-      appBar:AppBar(
-        title:Text('导航页面')
-      ),
-      body:Center(
-        child:RaisedButton(
-          child:Text('查看商品详情页'),
-          onPressed: (){
-            Navigator.push(context,MaterialPageRoute(
-              builder:(cont)=>new SecondScreen()
-            ));
-          },
-        )
-      )
-    );
-  }
-}
+// class FirstPage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title:Text('找小姐姐要电话')
+//       ),
+//       body:Center(
+//         child:RouteButton()
+//       )
+//     );
+//   }
+// }
 
-class SecondScreen extends StatelessWidget{
-  @override
-  Widget build(BuildContext context){
-    return Scaffold(
-      appBar: AppBar(title:Text('商品详情页')),
-      body:Center(
-        child:RaisedButton(
-          child:Text('返回'),
-          onPressed: (){
-            Navigator.pop(context);
-          },
-        )
-      )
-    );
-  }
-}
+// class RouteButton extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return RaisedButton(
+//       onPressed:(){
+//         _navigateToXiaojiejie(context);
+//       },
+//       child:Text('去找小姐姐')
+//     );
+//   }
+//   _navigateToXiaojiejie(BuildContext context) async{
+//     final result = await Navigator.push(
+//       context,
+//       MaterialPageRoute(builder:(context)=>Xiaojiejie())
+//     );
+//     Scaffold.of(context).showSnackBar(SnackBar(content:Text('$result')));
+//   }
+// }
+
+// class Xiaojiejie extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title:Text('我是小姐姐')
+//       ),
+//       body:Center(
+//         child:Column(
+//           children: <Widget>[
+//             RaisedButton(
+//               child:Text('大长腿小姐姐'),
+//               onPressed: (){
+//                 Navigator.pop(context,'大长腿小姐姐：15099929292');
+//               },
+//             ),
+//             RaisedButton(
+//               child:Text('小蛮腰小姐姐'),
+//               onPressed: (){
+//                 Navigator.pop(context,'小蛮腰小姐姐:：17333928190');
+//               },
+//             )
+//           ],
+//         )
+//       )
+//     );
+//   }
+// }
+
+// class Product{
+//   final String title;//商品标题
+//   final String description;//商品描述
+//   Product(this.title,this.description);
+// }
+
+// void main(){
+//   runApp(MaterialApp(
+//     title:'导航数据传递接收',
+//     home:ProductList(
+//       products:List.generate(
+//         20,
+//         (i)=>Product('商品 $i','这是一个商品详情，编号：$i')
+//       )
+//     )
+//   ));
+// }
+
+// class ProductList extends StatelessWidget {
+
+//   final List<Product> products;
+//   ProductList({Key key,@required this.products}):super(key:key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar:AppBar(title:Text('商品列表')),
+//       body:ListView.builder(
+//         itemCount:products.length,
+//         itemBuilder:(context,index){
+//           return ListTile(
+//             title:Text(products[index].title),
+//             onTap:(){
+//               Navigator.push(
+//                 context,
+//                 MaterialPageRoute(
+//                   builder:(context)=>ProductDetail(product:products[index])
+//                 )
+//               );
+//             }
+//           );
+//         }
+//       )
+//     );
+//   }
+// }
+
+// class ProductDetail extends StatelessWidget {
+
+//   final Product product;
+//   ProductDetail({Key key,@required this.product}):super(key:key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar:AppBar(title:Text('${product.title}')),
+//       body:Center(child: Text('${product.description}'),)
+//     );
+//   }
+// }
+
+
+// import 'package:flutter/material.dart';
+
+// void main(){
+//   runApp(MaterialApp(
+//     title:'导航演示01',
+//     home:new FirstScreen()
+//   ));
+// }
+
+// class FirstScreen extends StatelessWidget{
+//   @override
+//   Widget build(BuildContext context){
+//     return Scaffold(
+//       appBar:AppBar(
+//         title:Text('导航页面')
+//       ),
+//       body:Center(
+//         child:RaisedButton(
+//           child:Text('查看商品详情页'),
+//           onPressed: (){
+//             Navigator.push(context,MaterialPageRoute(
+//               builder:(cont)=>new SecondScreen()
+//             ));
+//           },
+//         )
+//       )
+//     );
+//   }
+// }
+
+// class SecondScreen extends StatelessWidget{
+//   @override
+//   Widget build(BuildContext context){
+//     return Scaffold(
+//       appBar: AppBar(title:Text('商品详情页')),
+//       body:Center(
+//         child:RaisedButton(
+//           child:Text('返回'),
+//           onPressed: (){
+//             Navigator.pop(context);
+//           },
+//         )
+//       )
+//     );
+//   }
+// }
 
 // import 'package:flutter/material.dart';
 
