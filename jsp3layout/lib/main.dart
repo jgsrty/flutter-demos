@@ -1,5 +1,16 @@
 import 'package:flutter/material.dart';
 
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child:Image.asset('images/RtyXmd.png')
+    );
+  }
+}
+
 // void main() {
 //   runApp(MaterialApp(
 //     title:'页面跳转返回数据',
