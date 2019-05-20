@@ -1,6 +1,40 @@
 import 'package:flutter/material.dart';
 
 /** 使用material组件 */
+void main(){
+  runApp(MaterialApp(
+    title:'flutter tutorial',
+    home:TutorialHome()
+  ));
+}
+class TutorialHome extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        leading:IconButton(
+          icon:Icon(Icons.menu),
+          onPressed: (){},
+        ),
+        title:Text('Example title'),
+        actions: <Widget>[
+          IconButton(
+            icon:Icon(Icons.search),
+            onPressed: (){},
+          )
+        ],
+      ),
+      body:Center(
+        child:Text('hello,world.')
+      ),
+      floatingActionButton: FloatingActionButton(
+        child:Icon(Icons.add),
+        onPressed: (){},
+      ),
+    );
+  }
+}
+
 
 
 /** 使用widget组件 */
