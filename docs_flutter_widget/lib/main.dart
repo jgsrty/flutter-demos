@@ -24,13 +24,37 @@ class TutorialHome extends StatelessWidget {
           )
         ],
       ),
-      body:Center(
-        child:Text('hello,world.')
-      ),
+      // body:Center(
+      //   child:Text('hello,world.')
+      // ),
+      body:MyButton(),
       floatingActionButton: FloatingActionButton(
         child:Icon(Icons.add),
         onPressed: (){},
       ),
+    );
+  }
+}
+
+class MyButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap:(){
+        print('myBUtton was tapped');
+      },
+      child:Container(
+        height:36.0,
+        padding:const EdgeInsets.all(8.0),
+        margin:const EdgeInsets.symmetric(horizontal: 8.0),
+        decoration:BoxDecoration(
+          borderRadius:BorderRadius.circular(5.0),
+          color:Colors.lightGreen
+        ),
+        child:Center(
+          child:Text('Engage')
+        )
+      )
     );
   }
 }
