@@ -20,7 +20,7 @@ class _HotMovieItemWidgetState extends State<HotMovieItemWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Image.network(
-            widget.hotMovieData.images,
+            widget.hotMovieData.images.small,
             width: 80,
             height: 120,
             fit: BoxFit.cover,
@@ -41,10 +41,11 @@ class _HotMovieItemWidgetState extends State<HotMovieItemWidget> {
                     widget.hotMovieData.rating.toString(),
                     style: TextStyle(fontSize: 14, color: Colors.black54),
                   ),
-                  Text('导演: ' + widget.hotMovieData.directors,
+                  Text('导演: ' + widget.hotMovieData.getDirectors(),
                       style: TextStyle(fontSize: 14, color: Colors.black54)),
-                  Text('主演: ' + widget.hotMovieData.casts,
-                      style: TextStyle(fontSize: 14, color: Colors.black54)),
+                  Text('主演: ' + widget.hotMovieData.getCasts(),
+                      style: TextStyle(fontSize: 14, color: Colors.black54),
+                      overflow: TextOverflow.ellipsis,),
                 ],
               )
             )
@@ -54,7 +55,7 @@ class _HotMovieItemWidgetState extends State<HotMovieItemWidget> {
             child:Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(widget.hotMovieData.watchedPeople.toString()+'人看过',style: TextStyle(color: Colors.red,fontSize: 14),),
+                Text(widget.hotMovieData.collectCount.toString()+'人看过',style: TextStyle(color: Colors.red,fontSize: 14),),
                 OutlineButton(
                   child: Text('购票',style: TextStyle(fontSize: 16),),
                   color: Colors.red,
