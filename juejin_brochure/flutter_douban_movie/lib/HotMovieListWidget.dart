@@ -6,7 +6,10 @@ import 'HotMovieData.dart';
 import 'package:http/http.dart' as http;
 
 class HotMoviesListWidget extends StatefulWidget {
-
+  String curCity;
+  HotMoviesListWidget(String city){
+    curCity = city;
+  }
 
   @override
   _HotMoviesListWidgetState createState() => _HotMoviesListWidgetState();
